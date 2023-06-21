@@ -56,7 +56,7 @@ function updateSection(data, container) {
   container.innerHTML = "";
 
   // Limit the number of items to display
-  data.splice(3);
+  data.splice(10);
 
   for (let element of data){
     let uri = element.resourceURI.split('');
