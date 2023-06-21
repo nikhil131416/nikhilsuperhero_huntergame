@@ -51,7 +51,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-    width: 90%;
+    width: 80%;
     margin: 20px auto;
 }
 
@@ -119,6 +119,16 @@ body{
     font-size: 1.1rem;
     color:  var(--red);
     cursor: pointer;
+}
+
+.no-favs{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 1.5rem;
+    color: black;
+
 }
 
 /* Menu */
@@ -218,4 +228,87 @@ body{
     background-color: rgba(255, 255, 255, 0.349);  
     backdrop-filter: blur(6px);
     display: none;
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width:650px){
+    .logo{
+        display: none;
+    }
+
+    .superhero-card{
+        width: 85%;
+        height: 300px;
+    }
+
+    .superhero-card .image{
+        height: 200px;
+    }
+
+    .superhero-card  .name{
+        font-size: 1.2rem;
+    }
+
+    #nav-bar{
+        background: linear-gradient(45deg, black 20%, var(--red));
+        bottom: 5px;
+        flex-direction: column-reverse;
+        border-radius: 30px;
+    }
+
+    #nav-bar>div{
+        height: 80px;
+        border-bottom: 2px solid white;
+    }
+
+    #nav-bar>div:hover{
+        border-bottom: 2px solid rgb(202, 12, 12);
+    }
+
+    #nav-bar>div p{
+        font-size: 1.3rem;
+        padding: 19px 0;
+    }
+
+
+    #search-bar >input{
+        width: 80vw;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+    
+    #search-bar{
+        top: 20px;
+        border-left: none;
+    }
+
+    #search-bar i{
+        font-size: 1.7rem;
+    }
+
+    #load-more{
+        border-left: none;
+    }
+
+    #hamburger{
+        bottom: 10px;
+    }
+
+    #error{
+        font-size: 1.5rem;
+    }
+    
+    .fav-btn-container{
+        width: 50px;
+        height: 50px;
+        padding: 14px 13px;
+    }
+    
+    .fav-btn-container i{
+        font-size: 1.5rem;
+    }
+    
 }

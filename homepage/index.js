@@ -138,7 +138,9 @@ function toggleFav(element){
 
     //removing the character from favourites page if it is already in favourites
     if(document.querySelector(".favorites").classList.contains('border-bottom')){
-        element.parentElement.parentElement.remove();
+        showFavourites();
+        document.querySelector(".home").classList.toggle('border-bottom');
+        document.querySelector(".favorites").classList.toggle('border-bottom');
     }
 }
 
@@ -151,6 +153,12 @@ function showFavourites(){
     let favs = JSON.parse(localStorage.getItem('favs')) || [];
     container.innerHTML = "";
 
+    if(favs.length == 0){
+        console.log(favs);
+        container.innerHTML = `<h1 class="no-favs">No Favourites Added</h1>`;
+        return;
+    }
+
     for(let i=0; i<favs.length; i++){
         if(favs[i] == null) continue;
         let url = `https://gateway.marvel.com:443/v1/public/characters/${favs[i]}?ts=${ts}&apikey=${apiKey}&hash=${hash}`;
@@ -161,6 +169,8 @@ function showFavourites(){
 // Loading more characters
 let loaded=0;
 function loadMore(){
+    if(document.querySelector(".favorites").classList.contains('border-bottom')) return;
+
     let url = initialUrl;
     getData(url+'&offset='+loaded+'&limit=50');
     loaded+=20;

@@ -54,9 +54,6 @@ function updateHeader(result) {
 // Update a section (comics, series, events) with the corresponding data
 function updateSection(data, container) {
   container.innerHTML = "";
-  if (data.length == 0) {
-    container.innerHTML = `<h2>No data available</h2>`;
-  }
 
   // Limit the number of items to display
   data.splice(3);
@@ -89,6 +86,10 @@ function updateSection(data, container) {
           </div>`;
       }
     });
+  }
+  
+  if (data.length == 0) {
+    container.innerHTML = `<h2>No data available</h2>`;
   }
 }
 
