@@ -48,7 +48,7 @@ function updateHeader(result) {
   } else {
     i = "fa-regular";
   }
-  favBtn.innerHTML = `<span>Add to Favorites</span> <i class="add-to-fav ${i} fa-heart"></i>`;
+  favBtn.innerHTML = `<i class="add-to-fav ${i} fa-heart"></i>`;
 }
 
 // Update a section (comics, series, events) with the corresponding data
